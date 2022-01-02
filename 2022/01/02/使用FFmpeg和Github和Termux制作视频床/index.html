@@ -22,7 +22,7 @@
 
   
 
-  <title>Hello World | 白天明的个人网站</title>
+  <title>使用FFmpeg和Github和Termux制作视频床 | 白天明的个人网站</title>
 
   
 
@@ -96,11 +96,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Hello World</h1>
+          <h1 class="title-wrap">使用FFmpeg和Github和Termux制作视频床</h1>
           <h2 class="title-sub-wrap">
             <strong>白天明</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-01-01T16:34:50.105Z" itemprop="datePublished">2022-01-02</time>
+            <time  class="article-date" datetime="2022-01-01T16:00:00.000Z" itemprop="datePublished">2022-01-02</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -129,26 +129,82 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+        <h1 id="使用FFmpeg和Github和Termux制作视频床"><a href="#使用FFmpeg和Github和Termux制作视频床" class="headerlink" title="使用FFmpeg和Github和Termux制作视频床"></a>使用FFmpeg和Github和Termux制作视频床</h1><p>注:1.选择(y/n)都选y<br>      2.文件名指你的文件的名字，可自定义</p>
+<h2 id="Termux"><a href="#Termux" class="headerlink" title="Termux"></a>Termux</h2><ol>
+<li>下载Termux<ul>
+<li>进入<a target="_blank" rel="noopener" href="https://f-droid.org/packages/com.termux/">下载地址</a></li>
+<li>选择最新版本下载</li>
+<li>安装</li>
+</ul>
+</li>
+<li>配置<ul>
+<li>打开Termux</li>
+<li>输入<code>pkg update</code></li>
+<li>完成</li>
+<li>输入<code>pkg install ffmpeg</code></li>
+<li>完成</li>
+<li>输入<code>termux-setup-storage</code></li>
+<li>同意</li>
+<li>完成</li>
+</ul>
+</li>
+<li>切片<ul>
+<li>系统新建文件夹</li>
+<li>把要切片的视频移动到新建的文件夹内</li>
+<li>打开Termux</li>
+<li>输入<code>cd /storage/emulated/0/新建的文件夹名</code></li>
+<li><code>输入 ffmpeg -y -i 文件名.mp4 -vcodec copy -acodec copy -vbsf h264_mp4toannexb 文件名.ts</code></li>
+<li>获得[文件.ts]</li>
+<li> 输入<code>ffmpeg -i 文件名.ts -c copy -map 0 -f segment -segment_list 文件名.m3u8 -segment_time 5 文件名%03d.ts</code></li>
+<li>打开文件管理软件</li>
+<li>进入新建的文件夹</li>
+<li>把切好的视频移动到同一个新的文件夹(不包括原文件和第一个命令生成的[文件.ts])</li>
+<li>完成<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2></li>
+</ul>
+</li>
+<li>注册Github账号  <ul>
+<li>进入<a target="_blank" rel="noopener" href="https://github.com/">Github</a>  </li>
+<li>点击Sign up  </li>
+<li>按照提示填入相关信息即可  </li>
+</ul>
+</li>
+<li>建立仓库  <ul>
+<li>回到主页  </li>
+<li>点击Start a Project  </li>
+<li>Repository name填入仓库名即可  </li>
+<li>点击Create repository  </li>
+<li>完成  </li>
+</ul>
+</li>
+<li>在Github仓库中创建文件夹<ul>
+<li>点击creating a new file/创建新文件</li>
+<li>在文件名中输入任意文件名和/</li>
+<li>建立文件夹  <img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_154258.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>输入任意文件名</li>
+<li>点击commit new file</li>
+<li>点击upload file  <img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_154012.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>选择choose your file<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_154522.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>进入放切片视频的文件夹</li>
+<li>选择所有文件</li>
+<li>点击确定</li>
+<li>等待进度条消失  <img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_155150.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>点击Commit changes  <img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_155202.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>进入Github中仓库的文件夹</li>
+<li>删除一开始为了建立文件夹而建立的文件(不删除也可以，但是我有强迫症╮(‵▽′)╭)  <img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_155655.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>点击Delete file</li>
+<li>点击 Commit changes</li>
+<li>完成<h2 id="播放视频"><a href="#播放视频" class="headerlink" title="播放视频"></a>播放视频</h2></li>
+</ul>
+</li>
+<li>打开浏览器</li>
+<li>输入<code>https://cdn.jsdelivr.net/gh/Github用户名/仓库名/Github仓库中的文件夹名/文件名.m3u8</code>  <img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_160313.JPG" width = "300" height = "200" alt="图" align=center /></li>
+</ol>
+<h2 id="大功告成O-≧▽≦-O"><a href="#大功告成O-≧▽≦-O" class="headerlink" title="大功告成Ｏ(≧▽≦)Ｏ"></a>大功告成Ｏ(≧▽≦)Ｏ</h2>
       </section>
 
       
       
         <nav class="article-nav">
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -159,10 +215,11 @@
           <h2 class="card-text--title text-ellipsis">使用Flutter-PicGo和Github在Android端建立图床</h2>
         </a>
       
-      <div class="card-text--row">Older</div>
+      <div class="card-text--row">Newer</div>
     </div>
   </article>
 </div>
+          
           
         </nav>
       
