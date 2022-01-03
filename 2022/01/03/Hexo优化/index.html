@@ -22,7 +22,7 @@
 
   
 
-  <title>使用Flutter-PicGo和Github在Android端建立免费图床 | 白天明的个人网站</title>
+  <title>Hexo优化 | 白天明的个人网站</title>
 
   
 
@@ -98,11 +98,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">使用Flutter-PicGo和Github在Android端建立免费图床</h1>
+          <h1 class="title-wrap">Hexo优化</h1>
           <h2 class="title-sub-wrap">
             <strong>白天明</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2022-01-01T16:00:00.000Z" itemprop="datePublished">2022-01-02</time>
+            <time  class="article-date" datetime="2022-01-02T16:00:00.000Z" itemprop="datePublished">2022-01-03</time>
           </h2>
           <ul class="wrap-list dark">
   
@@ -131,81 +131,70 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="使用FluttercPicGo和Github在Android端建立图床"><a href="#使用FluttercPicGo和Github在Android端建立图床" class="headerlink" title="使用FluttercPicGo和Github在Android端建立图床"></a>使用FluttercPicGo和Github在Android端建立图床</h1><p>简介:既然来看教程肯定是知道图床是干什么的~o(〃’▽’〃)o</p>
-<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><ol>
-<li>注册Github账号<ul>
-<li>进入<a target="_blank" rel="noopener" href="https://github.com/">Github</a></li>
-<li>点击Sign up</li>
-<li>按照提示填入相关信息即可</li>
+        <h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><ol>
+<li>输入<code>cd Blogs</code></li>
+<li>输入<code>git clone https://github.com/miiiku/hexo-theme-flexblock.git ./themes/flex-block</code></li>
+<li>输入<code>vim _config.yml</code></li>
+<li>修改themes:主题名<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_232004.JPG" width = "300" height = "200" alt="图" align=center /></li>
+</ol>
+<h2 id="添加标签"><a href="#添加标签" class="headerlink" title="添加标签"></a>添加标签</h2><ol>
+<li>输入<code>cd Blogs</code></li>
+<li>输入<code>hexo new page 标签名</code></li>
+<li>输入<code>cd themes/主题名</code></li>
+<li>输入<code>vim _config.yml</code></li>
+<li>在memu下添加标签<code>标签名: /标签</code></li>
+<li>输入<code>cd</code></li>
+<li>输入<code>cd Blogs/source/标签</code></li>
+<li>输入<code>vim index.md</code></li>
+<li>在data下添加<code>type: &quot;标签名&quot;</code><img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_234820.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>保存退出上传</li>
+</ol>
+<h2 id="添加搜索"><a href="#添加搜索" class="headerlink" title="添加搜索"></a>添加搜索</h2><h2 id="添加搜索-1"><a href="#添加搜索-1" class="headerlink" title="添加搜索"></a>添加搜索</h2><ol>
+<li>algolia<ul>
+<li>打开<a target="_blank" rel="noopener" href="https://www.algolia.com/">algolia</a></li>
+<li>按提示注册账号</li>
+<li>成功后回到主页</li>
+<li>点击侧边栏第二个按钮<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220103_073116.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>点击Create Index</li>
+<li>Index name任意填写，但要记住<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220103_073358.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>确认后刷新网页</li>
+<li>点击侧边栏最后一个齿轮型按钮<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220103_073637.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>点击APi keys</li>
+<li>点击 All API Keys<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220103_073936.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>点击New API Key</li>
+<li>Indices 填入刚刚填写的Index name，ACL选择search addObject deleteObject deleteIndex</li>
+<li>确认</li>
+<li>复制All API Key中刚刚生成的秘钥，则获得API Key<br><img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220103_074730.JPG" width = "300" height = "200" alt="图" align=center />  按第一个按钮复制</li>
+<li>回到Your API Key<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220103_075104.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>复制Application ID</li>
 </ul>
 </li>
-<li>建立仓库<ul>
-<li>回到主页</li>
-<li>点击Start a Project</li>
-<li>Repository name填入仓库名即可</li>
-<li>点击Create repository</li>
-<li>完成</li>
-</ul>
-</li>
-<li>获取Token<ul>
-<li>点击左上角三横</li>
-<li>点击Settings</li>
-<li>点击Developer Settings</li>
-<li>点击Personal access tokens</li>
-<li>点击Generate new token</li>
-<li>Note任意填入</li>
-<li>Expiration选择No Expiration</li>
-<li>勾选repo</li>
-<li>点击Generate token</li>
-<li>记下Token</li>
-<li>完成<h2 id="PicGo"><a href="#PicGo" class="headerlink" title="PicGo"></a>PicGo</h2></li>
-</ul>
-</li>
-<li>安装PicGo<ul>
-<li>打开<a target="_blank" rel="noopener" href="https://github.com/PicGo/flutter-picgo/releases">下载地址</a></li>
-<li>选择最新版本</li>
-<li>点击Assets</li>
-<li>选择app-release.apk</li>
-<li>下载完成后安装</li>
-<li>完成</li>
-</ul>
-</li>
-<li>设置<ul>
-<li>打开PicGo</li>
-<li>选择设置</li>
-<li>选择图床设置</li>
-<li>选择Github图床</li>
-<li>按提示填入相关信息<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_114011.JPG" width = "300" height = "200" alt="图片" align=center /></li>
-<li>选择保存</li>
-<li>选择设置为默认图床</li>
-<li>完成<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2></li>
-</ul>
-</li>
-<li>上传图片<ul>
-<li>回到相册</li>
-<li>点击右下角的悬浮按钮<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_113917.JPG" width = "300" height = "200" alt="图" align=center /></li>
-<li>选择图片</li>
-<li>确定</li>
-<li>刷新</li>
-<li>完成</li>
-</ul>
-</li>
-<li>查看图片信息<ul>
-<li>点击图片</li>
-<li>长按即可<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_114653.JPG" width = "300" height = "200" alt="图" align=center /></li>
-</ul>
-</li>
-<li>获取图片链接<ul>
-<li>在图片信息中点击图片链接即可自动复制图片链接至剪贴板</li>
+<li>Termux<ul>
+<li>进入网站根目录</li>
+<li>修改_config.yml</li>
+<li>在文末添加<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">algolia:</span><br><span class="line">  applicationID: &#x27;applicationID&#x27;</span><br><span class="line">  apiKey: &#x27;apiKey&#x27;</span><br><span class="line">  indexName: &#x27;...&#x27;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ol>
+<ul>
+<li>输入<code>npm install hexo-algolia --save</code></li>
+<li>完成</li>
+<li>输入<code>exportHEXO_ALGOLIA_INDEXING_KEY=你的API Keyw</code></li>
+<li>输入<code>hexo algolia</code></li>
+<li>完成</li>
+<li>进入网站主题目录</li>
+<li>修改<code>_config.yml</code></li>
+<li>把algolia_search中enable的false改为true<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">algolia_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure></li>
+<li>输入<code>hexo g -d</code>上传文件</li>
+<li>完成</li>
+</ul>
 
       </section>
 
       
       
         <nav class="article-nav">
+          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -214,21 +203,6 @@
       
         <a href="/2022/01/02/%E4%BD%BF%E7%94%A8FFmpeg%E5%92%8CGithub%E5%92%8CTermux%E5%88%B6%E4%BD%9C%E8%A7%86%E9%A2%91%E5%BA%8A/" itemprop="url">
           <h2 class="card-text--title text-ellipsis">使用FFmpeg和Github和Termux在Android端制作免费视频床</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2022/01/02/%E4%BD%BF%E7%94%A8Termux%E5%92%8CHexo%E5%92%8CGithub%E5%9C%A8Android%E7%AB%AF%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">使用Termux和Hexo和Github在Android端搭建免费个人网站</h2>
         </a>
       
       <div class="card-text--row">Older</div>
