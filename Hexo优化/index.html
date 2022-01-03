@@ -31,9 +31,6 @@
   
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.3/index.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/monokai.css">
-  
 
   
 <link rel="stylesheet" href="/css/style.css">
@@ -172,7 +169,12 @@
 <li>Termux<ul>
 <li>进入网站根目录</li>
 <li>修改_config.yml</li>
-<li>在文末添加<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">algolia:</span><br><span class="line">  applicationID: &#x27;applicationID&#x27;</span><br><span class="line">  apiKey: &#x27;apiKey&#x27;</span><br><span class="line">  indexName: &#x27;...&#x27;</span><br></pre></td></tr></table></figure></li>
+<li>在文末添加<pre><code>algolia:
+applicationID: &#39;applicationID&#39;
+apiKey: &#39;apiKey&#39;
+indexName: &#39;...&#39;
+</code></pre>
+</li>
 </ul>
 </li>
 </ol>
@@ -184,7 +186,10 @@
 <li>完成</li>
 <li>进入网站主题目录</li>
 <li>修改<code>_config.yml</code></li>
-<li>把algolia_search中enable的false改为true<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">algolia_search:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure></li>
+<li>把algolia_search中enable的false改为true<pre><code>algolia_search:
+enable: true
+</code></pre>
+</li>
 <li>输入<code>hexo g -d</code>上传文件</li>
 <li>完成</li>
 </ul>
@@ -308,6 +313,8 @@
     </div>
   </article>
 </div>
+
+
 
     <!-- footer container -->
 <footer id="footer" class="footer">
