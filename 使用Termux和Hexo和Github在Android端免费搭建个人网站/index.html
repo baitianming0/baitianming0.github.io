@@ -22,7 +22,7 @@
 
   
 
-  <title>使用Flutter-PicGo和Github在Android端建立免费图床 | 白天明的个人网站</title>
+  <title>使用Termux和Hexo和Github在Android端搭建免费个人网站 | 白天明的个人网站</title>
 
   
 
@@ -98,7 +98,7 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">使用Flutter-PicGo和Github在Android端建立免费图床</h1>
+          <h1 class="title-wrap">使用Termux和Hexo和Github在Android端搭建免费个人网站</h1>
           <h2 class="title-sub-wrap">
             <strong>白天明</strong>
             <span>发布于</span>
@@ -131,7 +131,8 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="使用FluttercPicGo和Github在Android端建立图床"><a href="#使用FluttercPicGo和Github在Android端建立图床" class="headerlink" title="使用FluttercPicGo和Github在Android端建立图床"></a>使用FluttercPicGo和Github在Android端建立图床</h1><p>简介:既然来看教程肯定是知道图床是干什么的~o(〃’▽’〃)o</p>
+        <h1 id="使用Termux和Hexo和Github搭建免费个人网站"><a href="#使用Termux和Hexo和Github搭建免费个人网站" class="headerlink" title="使用Termux和Hexo和Github搭建免费个人网站"></a>使用Termux和Hexo和Github搭建免费个人网站</h1><p>简介:一直希望有一个个人网站，这次终于成功了，但是在路上遇到了好多挫折，因此，我写了这篇教程帮助大家更简单的搭建网站</p>
+<p>注:1. Termux选择(y/n)  都选y<br>2. 文件夹名或文件名都是你的文件名，可以自定义<br>3. 用户名指自己的账号名<br>4. Termux完成时会出现一行<code>~ $</code><br><img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_200512.JPG" width = "300" height = "200" alt="图" align=center /></p>
 <h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><ol>
 <li>注册Github账号<ul>
 <li>进入<a target="_blank" rel="noopener" href="https://github.com/">Github</a></li>
@@ -142,65 +143,90 @@
 <li>建立仓库<ul>
 <li>回到主页</li>
 <li>点击Start a Project</li>
-<li>Repository name填入仓库名即可</li>
+<li>Repository name填入<code>用户名.github.io</code>即可<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_194851.JPG" width = "300" height = "200" alt="图" align=center /></li>
 <li>点击Create repository</li>
 <li>完成</li>
 </ul>
 </li>
-<li>获取Token<ul>
-<li>点击左上角三横</li>
-<li>点击Settings</li>
-<li>点击Developer Settings</li>
-<li>点击Personal access tokens</li>
-<li>点击Generate new token</li>
-<li>Note任意填入</li>
-<li>Expiration选择No Expiration</li>
-<li>勾选repo</li>
-<li>点击Generate token</li>
-<li>记下Token</li>
-<li>完成<h2 id="PicGo"><a href="#PicGo" class="headerlink" title="PicGo"></a>PicGo</h2></li>
+<li>选择主题<ul>
+<li>进入Settings，选择Pages<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_195442.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>点击Choose a themes<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_195812.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>点击Select theme<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_195956.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>点击Commit changes</li>
+<li>完成<h2 id="Termux"><a href="#Termux" class="headerlink" title="Termux"></a>Termux</h2></li>
 </ul>
 </li>
-<li>安装PicGo<ul>
-<li>打开<a target="_blank" rel="noopener" href="https://github.com/PicGo/flutter-picgo/releases">下载地址</a></li>
-<li>选择最新版本</li>
-<li>点击Assets</li>
-<li>选择app-release.apk</li>
-<li>下载完成后安装</li>
+<li>下载Termux<ul>
+<li>进入<a target="_blank" rel="noopener" href="https://f-droid.org/packages/com.termux/">下载地址</a></li>
+<li>选择最新版本下载</li>
+<li>安装</li>
+</ul>
+</li>
+<li>配置<ul>
+<li>打开Termux</li>
+<li>输入<code>pkg update</code></li>
 <li>完成</li>
-</ul>
-</li>
-<li>设置<ul>
-<li>打开PicGo</li>
-<li>选择设置</li>
-<li>选择图床设置</li>
-<li>选择Github图床</li>
-<li>按提示填入相关信息<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_114011.JPG" width = "300" height = "200" alt="图片" align=center /></li>
-<li>选择保存</li>
-<li>选择设置为默认图床</li>
-<li>完成<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2></li>
-</ul>
-</li>
-<li>上传图片<ul>
-<li>回到相册</li>
-<li>点击右下角的悬浮按钮<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_113917.JPG" width = "300" height = "200" alt="图" align=center /></li>
-<li>选择图片</li>
-<li>确定</li>
-<li>刷新</li>
+<li>输入<code>pkg install git</code></li>
 <li>完成</li>
+<li>输入<code>pkg install nodejs</code></li>
+<li>完成</li>
+<li>输入<code>pkg install openssh</code></li>
+<li>完成</li>
+<li>输入<code>pkg install vim</code></li>
+<li>完成</li>
+<li>输入<code>npm install -g hexo-cli</code></li>
+<li>完成</li>
+<li>输入<code>hexo init 文件夹名</code></li>
+<li>完成</li>
+<li>输入<code>cd 文件夹名</code></li>
+<li>输入<code>npm install hexo-deployer-git  --save</code></li>
+<li>完成</li>
+<li>输入<code>vim _config.yml</code></li>
+<li>输入<code>i</code><img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_184903.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>找到文末<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_185713.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>把文末替换为  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:用户名:用户名.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_185747.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>点击软键盘上的ESE<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_193452.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>输入<code>:wq</code><img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_194043.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>按一下手机自带输入法键盘右下角的确认键</li>
+<li>完成  </li>
 </ul>
 </li>
-<li>查看图片信息<ul>
-<li>点击图片</li>
-<li>长按即可<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_114653.JPG" width = "300" height = "200" alt="图" align=center /></li>
-</ul>
-</li>
-<li>获取图片链接<ul>
-<li>在图片信息中点击图片链接即可自动复制图片链接至剪贴板</li>
+<li>获取秘钥<ul>
+<li>输入<code>git config --global user.name &quot;用户名&quot;</code></li>
+<li>输入<code>git config --global user.email &quot;注册Github时使用的邮箱&quot;</code></li>
+<li>输入<code>ssh-keygen -t rsa -C &quot;注册Github时使用的邮箱</code></li>
+<li>出现下图时按确认，连按4次<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_201712.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>输入<code>cat ~/.ssh/id_rsa.pub</code></li>
+<li>复制出现的那串字符</li>
+<li>把这串字符保存到便签备用</li>
+<li>完成</li>
 </ul>
 </li>
 </ol>
-
+<h2 id="连接Github与本地"><a href="#连接Github与本地" class="headerlink" title="连接Github与本地"></a>连接Github与本地</h2><ol>
+<li>连接<ul>
+<li>打开浏览器</li>
+<li>进入<a target="_blank" rel="noopener" href="https://github.com/">Github</a></li>
+<li>点击右上角三横</li>
+<li>点击Settings</li>
+<li>点击SSH and GPG keys</li>
+<li>点击New SSH Key</li>
+<li>填写信息<img src="https://cdn.jsdelivr.net/gh/baitianming0/PicGo/IMG_20220102_203652.JPG" width = "300" height = "200" alt="图" align=center /></li>
+<li>点击Add SSH Key</li>
+<li>完成</li>
+</ul>
+</li>
+<li>上传文件<ul>
+<li>打开Termux</li>
+<li>输入<code>cd Blogs</code></li>
+<li>输入<code>hexo g -d</code></li>
+<li>完成</li>
+</ul>
+</li>
+</ol>
+<h2 id="打开https-用户名-github-io就可以发现你的个人网站已经完成"><a href="#打开https-用户名-github-io就可以发现你的个人网站已经完成" class="headerlink" title="打开https://用户名.github.io就可以发现你的个人网站已经完成"></a>打开<code>https://用户名.github.io</code>就可以发现你的个人网站已经完成</h2><p> Ｏ(≧▽≦)Ｏ</p>
+<h4 id="至于更换主题和建立文章等等，请看下一篇文章（＾◇＾）"><a href="#至于更换主题和建立文章等等，请看下一篇文章（＾◇＾）" class="headerlink" title="至于更换主题和建立文章等等，请看下一篇文章（＾◇＾）"></a>至于更换主题和建立文章等等，请看下一篇文章（＾◇＾）</h4>
       </section>
 
       
@@ -212,8 +238,8 @@
     
     <div class="card-text">
       
-        <a href="/2022/01/02/%E4%BD%BF%E7%94%A8FFmpeg%E5%92%8CGithub%E5%92%8CTermux%E5%88%B6%E4%BD%9C%E8%A7%86%E9%A2%91%E5%BA%8A/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">使用FFmpeg和Github和Termux在Android端制作免费视频床</h2>
+        <a href="/%E4%BD%BF%E7%94%A8FluttercPicGo%E5%92%8CGithub%E5%9C%A8Android%E7%AB%AF%E5%BB%BA%E7%AB%8B%E5%9B%BE%E5%BA%8A/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">使用Flutter-PicGo和Github在Android端建立免费图床</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -221,20 +247,6 @@
   </article>
 </div>
           
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2022/01/02/%E4%BD%BF%E7%94%A8Termux%E5%92%8CHexo%E5%92%8CGithub%E5%9C%A8Android%E7%AB%AF%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">使用Termux和Hexo和Github在Android端搭建免费个人网站</h2>
-        </a>
-      
-      <div class="card-text--row">Older</div>
-    </div>
-  </article>
-</div>
           
         </nav>
       
